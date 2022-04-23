@@ -4,7 +4,7 @@
 #include "rozmiar.h"
 #include <iostream>
 
-
+using namespace std;
 /*
  *  Tutaj trzeba opisac klase. Jakie pojecie modeluje ta klasa
  *  i jakie ma glowne cechy.
@@ -13,10 +13,14 @@ class Wektor {
   /*
    *  Tutaj trzeba wstawic definicje odpowiednich pol i metod prywatnych
    */
+  private:
+  double Tab[ROZMIAR];
   public:
   /*
    *  Tutaj trzeba wstawic definicje odpowiednich metod publicznych
-   */    
+   */
+  double &set_Tab[int x];
+  double get_Tab(int x);    
 };
 
 
