@@ -2,7 +2,8 @@
 #define UKLADROWNANLINIOWYCH_HH
 
 #include <iostream>
-
+#include "Wektor.hh"
+#include "Macierz.hh"
 
 /*
  *  Tutaj trzeba opisac klase. Jakie pojecie modeluje ta klasa
@@ -12,10 +13,22 @@ class UkladRownanLiniowych {
   /*
    *  Tutaj trzeba wstawic definicje odpowiednich pol i metod prywatnych
    */
+  private:
+  Wektor Wynik;
+  Wektor WWolny;
+  Macierz Matrix;
+
   public:
   /*
    *  Tutaj trzeba wstawic definicje odpowiednich metod publicznych
-   */    
+   */
+  Wektor &set_WWolny(){return WWolny;};
+  Macierz &set_Matrix(){return Matrix;};
+
+  Wektor get_Wynik()const {return Wynik;};
+  Wektor get_WWolny()const {return WWolny;};
+  Macierz get_Matrix()const {return Matrix;};
+
 };
 
 
@@ -35,9 +48,6 @@ std::istream& operator >> (std::istream &Strm, UkladRownanLiniowych &UklRown);
  * znalezc w pliku:
  *    ~bk/edu/kpo/zalecenia.txt 
  */
-std::ostream& operator << ( std::ostream                  &Strm, 
-                            const UkladRownanLiniowych    &UklRown
-                          );
-
+std::ostream& operator << ( std::ostream &Strm, const UkladRownanLiniowych &UklRown);
 
 #endif
