@@ -1,6 +1,7 @@
 #ifndef MACIERZ_HH
 #define MACIERZ_HH
 
+#include "Wektor.hh"
 #include "rozmiar.h"
 #include <iostream>
 
@@ -13,10 +14,13 @@ class Macierz {
   /*
    *  Tutaj trzeba wstawic definicje odpowiednich pol i metod prywatnych
    */
+  Wektor Tab[ROZMIAR];
   public:
   /*
    *  Tutaj trzeba wstawic definicje odpowiednich metod publicznych
-   */    
+   */
+  Wektor &operator [](int x);
+  Wektor operator [](int x) const;    
 };
 
 

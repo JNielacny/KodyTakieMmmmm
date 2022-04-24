@@ -29,7 +29,7 @@
       return Tab[x];
   }
 
-  double Wektor::operator [](int x)
+  double Wektor::operator [](int x) const
   {
       if(x<0 || x>=ROZMIAR)
       {
@@ -66,7 +66,8 @@
 
   double Wektor::operator *(Wektor Wart)
   {
-      Wektor Skalar;
+      double Skalar;
+      Skalar=0;
       for(int x=0; x<ROZMIAR; x++)
         Skalar += Tab[x] * Wart[x];
       return Skalar;

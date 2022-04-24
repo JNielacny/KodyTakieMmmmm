@@ -15,12 +15,24 @@ class Wektor {
    */
   private:
   double Tab[ROZMIAR];
+
   public:
   /*
    *  Tutaj trzeba wstawic definicje odpowiednich metod publicznych
    */
-  double &set_Tab[int x];
-  double get_Tab(int x);    
+  /*
+  double &set_Tab(int x);
+  double get_Tab(int x);
+  */
+ 
+  double &operator [](int x);
+  double operator [](int x) const;
+
+  Wektor operator +(Wektor Wart);  /*Wart w sensie wartość komórki*/
+  Wektor operator -(Wektor Wart);
+  Wektor operator *(double Wart);
+  Wektor operator /(double Wart);
+  double operator *(Wektor Wart);
 };
 
 
