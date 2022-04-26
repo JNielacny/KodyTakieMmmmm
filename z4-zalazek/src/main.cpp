@@ -21,4 +21,8 @@ int main()
 
   
   cout << endl << " Start programu " << endl << endl;
+  cin >> UklRown;
+  cout << UklRown << endl;
+  UklRown.get_Matrix().Gauss();
+
 }

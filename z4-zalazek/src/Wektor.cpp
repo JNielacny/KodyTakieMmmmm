@@ -77,10 +77,12 @@
   {
       for(int x=0; x<ROZMIAR; x++)
         Strm>>Wek[x];
+      return Strm;
   }
 
   std::ostream &operator << (std::ostream &Strm, const Wektor &Wek)
   {
       for(int x=0; x<ROZMIAR; x++)
         Strm<<Wek[x]<<" ";
+      return Strm;
   }

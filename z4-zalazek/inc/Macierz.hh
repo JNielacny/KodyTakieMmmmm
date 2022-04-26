@@ -11,16 +11,18 @@
  *  i jakie ma glowne cechy.
  */
 class Macierz {
+  private:  
   /*
    *  Tutaj trzeba wstawic definicje odpowiednich pol i metod prywatnych
    */
-  private:
   Wektor Tab[ROZMIAR];
-  
+  double Wyzn;
+
   public:
   /*
    *  Tutaj trzeba wstawic definicje odpowiednich metod publicznych
    */
+  double get_Wyzn()const{return Wyzn;};
   Wektor &operator [](int x);
   Wektor operator [](int x) const;    
   void Gauss();

@@ -30,3 +30,4 @@
     Strm<<Mac[x]<<endl;
     return Strm;
   }
+
