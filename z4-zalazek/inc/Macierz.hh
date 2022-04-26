@@ -14,13 +14,16 @@ class Macierz {
   /*
    *  Tutaj trzeba wstawic definicje odpowiednich pol i metod prywatnych
    */
+  private:
   Wektor Tab[ROZMIAR];
+  
   public:
   /*
    *  Tutaj trzeba wstawic definicje odpowiednich metod publicznych
    */
   Wektor &operator [](int x);
   Wektor operator [](int x) const;    
+  void Gauss();
 };
 
 
