@@ -62,7 +62,6 @@ void Macierz::Gauss()
             }
         }
     }
-
     suma=1;
     for(x=0; x<ROZMIAR; x++)
     {
@@ -73,5 +72,49 @@ void Macierz::Gauss()
     
     cout << "Wyznacznik macierzy wynosi: " << endl;
     cout << Wyzn << endl; 
-
 }
+
+void UkladRownanLiniowych::Cramer()
+{
+int x;
+    double Tabwyz[ROZMIAR];
+    double Wyznacznik;
+    Matrix.Gauss();
+    Wyznacznik=Matrix.get_Wyzn;
+    Macierz Tabxyz;
+
+    for(x=0;x<ROZMIAR;x++)
+    {
+        Tabxyz=Matrix;
+        Tabxyz.Zamien(WWolny,x);
+        Tabxyz.Gauss();
+        Tabwyz[x]=Tabxyz.get_Wyzn();
+    }
+
+    if(Wyznacznik!=0)
+    {
+        for(x=0; x<ROZMIAR; x++)
+        {
+            Wynik[x]=Tabwyz[x]/Wyznacznik;
+        }
+    }
+    else if(Wyznacznik==0)
+    {
+        bool Nieoznaczony=true;
+        for(x=0;x<ROZMIAR;x++)
+        {
+            if(Wyznacznik!=0)
+            {
+                cout<<"Układ jest sprzeczny"<<endl;
+                Nieoznaczony=false;
+                break;
+            }
+        }
+
+        if(Nieoznaczony)
+        {
+            cout<<"Układ jest nieoznaczony"<<endl;
+        }
+    }
+}
+
