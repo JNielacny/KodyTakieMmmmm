@@ -29,6 +29,7 @@ class UkladRownanLiniowych {
   Wektor get_WWolny()const {return WWolny;};
   Macierz get_Matrix()const {return Matrix;};
 
+  void cramer();
 };
 
 

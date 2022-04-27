@@ -25,6 +25,7 @@ class Macierz {
   double get_Wyzn()const{return Wyzn;};
   Wektor &operator [](int x);
   Wektor operator [](int x) const;    
+  void zamien();
   void Gauss();
 };
 

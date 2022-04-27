@@ -62,7 +62,7 @@ void Macierz::Gauss()
             }
         }
     }
-    
+
     suma=1;
     for(x=0; x<ROZMIAR; x++)
     {
