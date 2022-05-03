@@ -25,5 +25,8 @@ int main()
   cout << endl;
   cout << "Rozwiązanie x = (x1,x2,x3)"<<endl;
   UklRown.Cramer();
-  cout<<UklRown.get_Wynik()<<endl;
+  cout << UklRown.get_Wynik()<<endl;
+  cout << endl;
+  UklRown.WBledu();
+  cout << endl;
   }

@@ -17,6 +17,8 @@ class UkladRownanLiniowych {
   Wektor Wynik;
   Wektor WWolny;
   Macierz Matrix;
+  Wektor Blad;
+  double dlugosc;
 
   public:
   /*
@@ -30,7 +32,7 @@ class UkladRownanLiniowych {
   Macierz get_Matrix()const {return Matrix;};
 
   void Cramer();
-  
+  void WBledu();
 };
 
 

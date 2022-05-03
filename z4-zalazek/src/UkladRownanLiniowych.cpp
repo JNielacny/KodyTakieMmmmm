@@ -121,3 +121,10 @@ int x;
     }
 }
 
+void UkladRownanLiniowych::WBledu()
+{
+    Blad=Matrix*Wynik-WWolny;
+    dlugosc=sqrt(Blad*Blad);
+    cout<<"Wektor bledu:  "<<Blad<<endl;
+    cout<<"Dlugosc wektora bledu:  "<<dlugosc<<endl;
+}
