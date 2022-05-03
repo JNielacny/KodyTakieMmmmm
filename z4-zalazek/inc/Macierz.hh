@@ -24,8 +24,9 @@ class Macierz {
    */
   double get_Wyzn()const{return Wyzn;};
   Wektor &operator [](int x);
-  Wektor operator [](int x) const;    
-  void zamien();
+  Wektor operator [](int x) const;
+  Wektor operator*(Wektor Wart);    
+  void Zamien(Wektor wekt, int x);
   void Gauss();
 };
 
@@ -37,7 +38,7 @@ class Macierz {
  * znalezc w pliku:
  *    ~bk/edu/kpo/zalecenia.txt 
  */
-std::istream& operator >> (std::istream &Strm, Macierz &Mac);
+std::istream& operator >> (std::istream &Strm, Macierz &Matrix);
 
 /*
  * To przeciazenie trzeba opisac. Co ono robi. Jaki format
@@ -46,7 +47,7 @@ std::istream& operator >> (std::istream &Strm, Macierz &Mac);
  * znalezc w pliku:
  *    ~bk/edu/kpo/zalecenia.txt 
  */
-std::ostream& operator << (std::ostream &Strm, const Macierz &Mac);
+std::ostream& operator << (std::ostream &Strm, const Macierz &Matrix);
 
 
 #endif

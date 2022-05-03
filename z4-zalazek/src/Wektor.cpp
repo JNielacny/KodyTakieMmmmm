@@ -40,6 +40,14 @@
       return Tab[x];
   }
 
+  Wektor Wektor::operator +(Wektor Wart)
+  {
+      Wektor Roznica;
+      for(int x=0; x<ROZMIAR; x++)
+        Roznica[x] = Tab[x] + Wart[x];
+      return Roznica; 
+  }
+
   Wektor Wektor::operator -(Wektor Wart)
   {
       Wektor Roznica;
@@ -82,7 +90,9 @@
 
   std::ostream &operator << (std::ostream &Strm, const Wektor &Wek)
   {
+      cout<<"|";
       for(int x=0; x<ROZMIAR; x++)
-        Strm<<Wek[x]<<" ";
+        Strm<<Wek[x]<<"  ";
+      cout<<"|";
       return Strm;
   }

@@ -18,11 +18,12 @@ using namespace std;
 int main()
 {
   UkladRownanLiniowych   UklRown;   // To tylko przykladowe definicje zmiennej
-
   
   cout << endl << " Start programu " << endl << endl;
   cin >> UklRown;
   cout << UklRown << endl;
-  UklRown.get_Matrix().Gauss();
-
-}
+  cout << endl;
+  cout << "Rozwiązanie x = (x1,x2,x3)"<<endl;
+  UklRown.Cramer();
+  cout<<UklRown.get_Wynik()<<endl;
+  }

@@ -18,9 +18,10 @@ std::ostream& operator << ( std::ostream &Strm, const UkladRownanLiniowych &UklR
 {
     Strm<<"Macierz transpowana wynosi: "<<endl;
     Strm<<UklRown.get_Matrix();
-
+    cout << endl;
     Strm<<"Wyraz wolny wynosi: "<<endl;
-    Strm<<UklRown.get_WWolny(); 
+    Strm<<UklRown.get_WWolny();
+    cout << endl; 
     return Strm;
 }
 
@@ -31,32 +32,33 @@ void Macierz::Gauss()
     Wektor odej; /*wartość która odejmiemy*/    
     double ilor;   /*iloraz*/
     double suma;
+    Macierz Copied=*this;
 
     for(x=0; x<ROZMIAR; x++)
     {
         for(z=0; z<ROZMIAR; z++)
         {
-            if(Tab[x][x]!=0)
+            if(Copied[x][x]!=0)
             {
                for(p=x+1; p<ROZMIAR; p++)
                 {
-                    ilor=Tab[p][x]/Tab[x][x];
-                    odej=Tab[x]*ilor;
-                    Tab[p]=Tab[p]-odej;
+                    ilor=Copied[p][x]/Copied[x][x];
+                    odej=Copied[x]*ilor;
+                    Copied[p]=Copied[p]-odej;
                 }
             }
             else
             {
                 for(p=x+1; p<ROZMIAR; p++)
                 {
-                    if(Tab[p][x]==0)
+                    if(Copied[p][x]==0)
                     {
                         break;
                     }
                     else
                     {
                         a=a*(-1);
-                        swap(Tab[x], Tab[p]);
+                        swap(Copied[x], Copied[p]);
                     }
                 }
             }
@@ -65,13 +67,14 @@ void Macierz::Gauss()
     suma=1;
     for(x=0; x<ROZMIAR; x++)
     {
-        suma=suma*Tab[x][x];
+        suma=suma*Copied[x][x];
     }
     suma=suma*a;
     Wyzn=suma;
-    
+    /*
     cout << "Wyznacznik macierzy wynosi: " << endl;
     cout << Wyzn << endl; 
+    */
 }
 
 void UkladRownanLiniowych::Cramer()
@@ -80,7 +83,7 @@ int x;
     double Tabwyz[ROZMIAR];
     double Wyznacznik;
     Matrix.Gauss();
-    Wyznacznik=Matrix.get_Wyzn;
+    Wyznacznik=Matrix.get_Wyzn();
     Macierz Tabxyz;
 
     for(x=0;x<ROZMIAR;x++)
